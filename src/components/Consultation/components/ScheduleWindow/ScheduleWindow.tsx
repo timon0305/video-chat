@@ -1,9 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import ScheduleWindowHeader from "./ScheduleWindowHeader/ScheduleWindowHeader";
 import clsx from "clsx";
 // import MessageList from "./MessageList/MessageList";
-import useChatContext from "../../hooks/useChatContext/useChatContext";
+ import useChatContext from "../../hooks/useChatContext/useChatContext";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

@@ -75,7 +75,7 @@ export default function DeviceSelectionScreen({
 
     const currentDateTime = new Date();
     let futureDateTime = new Date();
-    futureDateTime.setSeconds(currentDateTime.getSeconds() + 10);
+    futureDateTime.setSeconds(currentDateTime.getSeconds() + 2);
 
     const getDurationInMinutes = (): number => {
         return moment(futureDateTime).diff(moment(currentDateTime), "minutes");
