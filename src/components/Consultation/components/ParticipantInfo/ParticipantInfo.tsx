@@ -156,6 +156,7 @@ export default function ParticipantInfo({
   const isVideoSwitchedOff = useIsTrackSwitchedOff(videoTrack as LocalVideoTrack | RemoteVideoTrack);
 
   const audioTrack = useTrack(audioPublication) as LocalAudioTrack | RemoteAudioTrack | undefined;
+  console.log("hello",audioTrack);
   const isParticipantReconnecting = useParticipantIsReconnecting(participant);
 
   const classes = useStyles();
@@ -170,7 +171,7 @@ export default function ParticipantInfo({
       data-cy-participant={participant.identity}
     >
       <div className={classes.infoContainer}>
-        <NetworkQualityLevel participant={participant} />
+        {/* <NetworkQualityLevel participant={participant} /> */}
         <div className={classes.infoRowBottom}>
           {isScreenShareEnabled && (
             <span className={classes.screenShareIconContainer}>
@@ -180,8 +181,8 @@ export default function ParticipantInfo({
           <span className={classes.identity}>
             <AudioLevelIndicator audioTrack={audioTrack} />
             <Typography variant="body1" className={classes.typeography} component="span">
-              {participant.identity}
-              {isLocalParticipant && ' (You)'}
+              {/* {participant.identity}
+              {isLocalParticipant && ' (You)'} */}
             </Typography>
           </span>
         </div>

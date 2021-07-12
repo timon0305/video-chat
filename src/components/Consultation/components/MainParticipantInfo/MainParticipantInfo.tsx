@@ -124,7 +124,7 @@ export default function MainParticipantInfo({
   const { room } = useVideoContext();
   const localParticipant = room!.localParticipant;
   const isLocal = localParticipant === participant;
- console.log(localParticipant);
+  console.log(localParticipant);
   const screenShareParticipant = useScreenShareParticipant();
   const isRemoteParticipantScreenSharing =
     screenShareParticipant && screenShareParticipant !== localParticipant;
@@ -159,9 +159,8 @@ export default function MainParticipantInfo({
         [classes.fullWidth]: !isRemoteParticipantScreenSharing,
       })}
     >
-             <AudioLevelIndicator audioTrack={audioTrack} />
+      {/* <AudioLevelIndicator audioTrack={audioTrack} /> */}
 
-             
       <div className={classes.BtnContainer}>
         <NetworkQualityLevel participant={localParticipant} />
         <p className={classes.textStyling}>
