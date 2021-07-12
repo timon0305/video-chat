@@ -1,4 +1,4 @@
-import { FormHelperText, makeStyles, Theme } from "@material-ui/core";
+import { makeStyles, Theme } from "@material-ui/core";
 
 export const ScheduleWindowHeader = makeStyles((theme: Theme) => ({
   container: {
