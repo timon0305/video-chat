@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {customStyles as useStyles} from "../../../../../style";
+import {ScheduleWindowHeader as useStyles} from "./styles"
 import useChatContext from "../../../hooks/useChatContext/useChatContext";
 import Grid from "@material-ui/core/Grid";
 import {Badge, Card, Button} from "@material-ui/core";
