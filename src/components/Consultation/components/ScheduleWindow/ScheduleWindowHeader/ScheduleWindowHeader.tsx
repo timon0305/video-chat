@@ -42,7 +42,7 @@ export default function ScheduleWindowHeader() {
                 </Grid>
                 <Grid item xs={6} container className={classes.mt2}>
                     <Grid item xs={5}>
-                        <Button  className={[classes.admirButton, classes.w100].join(' ')}>
+                        <Button  className={[classes.admitButton, classes.w100].join(' ')}>
                             Admir
                         </Button>
                     </Grid>
@@ -62,7 +62,7 @@ export default function ScheduleWindowHeader() {
                 </Grid>
                 <Grid item xs={6} container className={classes.mt2}>
                     <Grid item xs={5}>
-                        <Button className={[classes.admirButton, classes.w100].join(' ')}>
+                        <Button className={[classes.admitButton, classes.w100].join(' ')}>
                             Admir
                         </Button>
                     </Grid>
@@ -94,7 +94,7 @@ export default function ScheduleWindowHeader() {
                         </Grid>
                         <Grid item xs={6} container className={classes.mt2}>
                             <Grid item xs={5}>
-                                <Button className={[classes.admirButton, classes.w100].join(' ')}>
+                                <Button className={[classes.admitButton, classes.w100].join(' ')}>
                                     Admir
                                 </Button>
                             </Grid>
@@ -114,7 +114,7 @@ export default function ScheduleWindowHeader() {
                         </Grid>
                         <Grid item xs={6} container className={classes.mt2}>
                             <Grid item xs={5}>
-                                <Button className={[classes.admirButton, classes.w100].join(' ')}>
+                                <Button className={[classes.admitButton, classes.w100].join(' ')}>
                                     Admir
                                 </Button>
                             </Grid>
@@ -149,7 +149,7 @@ export default function ScheduleWindowHeader() {
                         </Grid>
                         <Grid item xs={6} container className={classes.mt2}>
                             <Grid item xs={5}>
-                                <Button className={[classes.admirButton, classes.w100].join(' ')}>
+                                <Button className={[classes.admitButton, classes.w100].join(' ')}>
                                     Admir
                                 </Button>
                             </Grid>
@@ -169,7 +169,7 @@ export default function ScheduleWindowHeader() {
                         </Grid>
                         <Grid item xs={6} container className={classes.mt2}>
                             <Grid item xs={5}>
-                                <Button className={[classes.admirButton, classes.w100].join(' ')}>
+                                <Button className={[classes.admitButton, classes.w100].join(' ')}>
                                     Admir
                                 </Button>
                             </Grid>

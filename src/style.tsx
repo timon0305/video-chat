@@ -147,7 +147,7 @@ export const customStyles = makeStyles((theme: Theme) => ({
         backgroundColor: "green",
         color: "#ffffff",
     },
-    AdmitButton: {
+    admitButton: {
         backgroundColor: "#5571C6",
         color: "#ffffff",
         "&:hover": {
