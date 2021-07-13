@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Draggable from 'react-draggable';
 import useChatContext from "../../hooks/useChatContext/useChatContext";
 import {chatWindowStyle as useStyles} from "./styles";
 import SendIcon from "../../assets/submitchat.svg"
@@ -13,6 +14,7 @@ export default function ChatWindow() {
         "https://i.pinimg.com/736x/b4/ea/c6/b4eac6d67645f2b6e1d1a440e42cca57.jpg";
 
   return (
+      <Draggable>
     <div className={classes.chatBox}>
         <div className={classes.chatWindowContainer}>
             <div className={classes.chatWindowContainerTop}>
@@ -75,5 +77,6 @@ export default function ChatWindow() {
             </div>
         </div>
     </div>
+      </Draggable>
   );
 }

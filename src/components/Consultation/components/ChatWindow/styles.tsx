@@ -3,7 +3,7 @@ import {makeStyles, Theme} from "@material-ui/core";
 export const chatWindowStyle = makeStyles((theme: Theme) => ({
         chatBox: {
             position: "absolute",
-            zIndex: 100,
+            zIndex: 400,
             top: "40vh",
             left: '3%',
         },
