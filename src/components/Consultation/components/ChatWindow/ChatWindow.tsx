@@ -1,53 +1,79 @@
-import React from "react";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import ChatWindowHeader from "./ChatWindowHeader/ChatWindowHeader";
-import ChatInput from "./ChatInput/ChatInput";
-import clsx from "clsx";
-import MessageList from "./MessageList/MessageList";
+import React, {useState} from "react";
 import useChatContext from "../../hooks/useChatContext/useChatContext";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    chatWindowContainer: {
-      background: "#F4F4F6",
-      zIndex: 1000,
-      display: "flex",
-      flexDirection: "column",
-      borderLeft: "1px solid #E4E7E9",
-      [theme.breakpoints.down("sm")]: {
-        position: "fixed",
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-      },
-    },
-    hide: {
-      display: "none",
-    },
-  })
-);
-
-// In this component, we are toggling the visibility of the ChatWindow with CSS instead of
-// conditionally rendering the component in the DOM. This is done so that the ChatWindow is
-// not unmounted while a file upload is in progress.
-
+import {chatWindowStyle as useStyles} from "./styles";
+import SendIcon from "../../assets/submitchat.svg"
+import Chats from "./Chats/Chats"
 export default function ChatWindow() {
-  const classes = useStyles();
-  const { isChatWindowOpen, messages, conversation } = useChatContext();
+    const classes = useStyles();
+  const { isChatWindowOpen, setIsChatWindowOpen} = useChatContext();
+    const [text, setText] = useState("");
+    const patientImage =
+        "https://i.pinimg.com/564x/36/60/58/366058cd421e6a981e50c6f800abbbd0.jpg";
+    const doctorImage =
+        "https://i.pinimg.com/736x/b4/ea/c6/b4eac6d67645f2b6e1d1a440e42cca57.jpg";
 
   return (
-    <aside
-      className={clsx(classes.chatWindowContainer, {
-        [classes.hide]: !isChatWindowOpen,
-      })}
-    >
-      <ChatWindowHeader />
-      <MessageList messages={messages} />
-      <ChatInput
-        conversation={conversation!}
-        isChatWindowOpen={isChatWindowOpen}
-      />
-    </aside>
+    <div className={classes.chatBox}>
+        <div className={classes.chatWindowContainer}>
+            <div className={classes.chatWindowContainerTop}>
+                <h4 className={classes.chatWindowContainerTopName}>Name</h4>
+                <button
+                    onClick={() => setIsChatWindowOpen(false)}
+                    className={classes.chatWindowContainerTopToggle}
+                >
+                    X
+                </button>
+            </div>
+            <div>
+                <div className={classes.chatWindowBottomChats}>
+                    <Chats
+                        me = {"p"}
+                        msg={"Lorem ipsum dolor sit amet, consectetur"}
+                        time={30}
+                        avatar={patientImage}
+                    />
+                    <Chats
+                        me = {'d'}
+                        msg={"Lorem ipsum dolor sit amet"}
+                        time={25}
+                        avatar={doctorImage}
+                    />
+                    <Chats
+                        me = {'p'}
+                        msg={"Lorem ipsum dolor sit"}
+                        time={20}
+                        avatar={patientImage}
+                    />
+                    <Chats
+                        me = {'p'}
+                        msg={"https://www.chat.com"}
+                        time={15}
+                        avatar={patientImage}
+                    />
+                    <Chats  me = {'d'} msg={"Lorem ipsum"} time={10} avatar={doctorImage} />
+                    <Chats me = {'p'} msg={"Lorem"} time={0} avatar={patientImage} />
+                </div>
+                <form
+                    className={classes.chatWindowBottomChatbox}
+
+                >
+                    <input
+                        className={classes.chatWindowBottomInput}
+                        type="text"
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                        placeholder="Write your message"
+                    />
+                    <button className={classes.chatWindowBottomSend}>
+                        <img
+                            className={classes.chatWindowBottomIcon}
+                            src={SendIcon}
+                            alt="send"
+                        />
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
   );
 }

@@ -192,7 +192,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function MenuBar() {
   const classes = useStyles();
   const { isSharingScreen, toggleScreenShare } = useVideoContext();
-  const { isScheduleWindowOpen } = useChatContext();
+  const { isScheduleWindowOpen, isChatWindowOpen } = useChatContext();
   const roomState = useRoomState();
   const isReconnecting = roomState === "reconnecting";
   const { room } = useVideoContext();
@@ -238,13 +238,10 @@ export default function MenuBar() {
           hideLabel
         />
         {process.env.REACT_APP_DISABLE_TWILIO_CONVERSATIONS !== "true" && (
-          <ToggleChatButton className={classes.buttons} />
+          <ToggleChatButton className={isChatWindowOpen ? classes.blueIconButton : classes.buttons} />
         )}
-        {!isScheduleWindowOpen ? (
-          <ToggleScheduleButton className={classes.buttons} />
-        ) : (
-          <ToggleScheduleButton className={classes.blueIconButton} />
-        )}
+
+         <ToggleScheduleButton className={isScheduleWindowOpen ? classes.blueIconButton : classes.buttons} />
 
         <AddPersonButton
           className={classes.buttons}

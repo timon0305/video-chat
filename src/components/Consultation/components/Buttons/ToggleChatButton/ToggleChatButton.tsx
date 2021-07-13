@@ -56,26 +56,16 @@ const useStyles = makeStyles({
 });
 
 export default function ToggleChatButton(props: { className?: string }) {
-    const classes = useStyles();
     const [shouldAnimate, setShouldAnimate] = useState(false);
     const {
         isChatWindowOpen,
         setIsChatWindowOpen,
         conversation,
-        hasUnreadMessages,
-        isScheduleWindowOpen,
-        setIsScheduleWindowOpen
     } = useChatContext();
 
     const toggleChatWindow = () => {
         setIsChatWindowOpen(!isChatWindowOpen);
     };
-
-    useEffect(() => {
-        if (isChatWindowOpen) {
-            setIsScheduleWindowOpen(false);
-        }
-    }, [isChatWindowOpen])
 
     useEffect(() => {
         if (shouldAnimate) {

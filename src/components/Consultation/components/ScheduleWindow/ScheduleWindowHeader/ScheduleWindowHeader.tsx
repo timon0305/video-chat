@@ -6,6 +6,7 @@ import {Badge, Card, Button} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import CloseSmallIcon from "../../../icons/CloseSmallIcon";
 
+
 export default function ScheduleWindowHeader() {
     const classes = useStyles();
     const {setIsScheduleWindowOpen} = useChatContext();
