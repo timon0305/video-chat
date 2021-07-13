@@ -61,21 +61,12 @@ export default function ToggleScheduleButton(props: { className?: string }) {
     const {
         isScheduleWindowOpen,
         setIsScheduleWindowOpen,
-        conversation,
-        hasUnreadMessages,
-        setIsChatWindowOpen,
-        isChatWindowOpen,
+        conversation
     } = useChatContext();
 
     const toggleChatWindow = () => {
         setIsScheduleWindowOpen(!isScheduleWindowOpen);
     };
-
-    useEffect(() => {
-        if (isScheduleWindowOpen) {
-            setIsChatWindowOpen(false);
-        }
-    }, [isScheduleWindowOpen])
 
     useEffect(() => {
         if (shouldAnimate) {

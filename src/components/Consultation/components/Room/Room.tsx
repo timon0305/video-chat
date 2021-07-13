@@ -33,26 +33,20 @@ export default function Room() {
   const classes = useStyles();
   const { isChatWindowOpen } = useChatContext();
   const { isScheduleWindowOpen } = useChatContext();
-  console.log('is chat window open', isChatWindowOpen)
   return (
       <>
-        {isChatWindowOpen ?
-            <div className={clsx(classes.container)}>
-              <MainParticipant />
-              <ParticipantList />
-              <ChatWindow />
-            </div>:''
-        }
         {isScheduleWindowOpen ?
             <div className={clsx(classes.container, { [classes.scheduleWindowOpen]: isScheduleWindowOpen })}>
               <MainParticipant />
               <ParticipantList />
               <ScheduleWindow />
+              {isChatWindowOpen?<ChatWindow />: '' }
             </div>:''
         }
         <div className={clsx(classes.container)}>
           <MainParticipant />
           <ParticipantList />
+          {isChatWindowOpen?<ChatWindow />: '' }
         </div>
 
       </>

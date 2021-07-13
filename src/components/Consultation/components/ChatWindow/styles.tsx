@@ -20,7 +20,8 @@ export const chatWindowStyle = makeStyles((theme: Theme) => ({
             color: 'white',
             display: 'flex',
             justifyContent: 'space-between',
-            marginBottom: '0.1rem'
+            marginBottom: '0.1rem',
+            cursor: 'pointer'
         },
         chatWindowContainerTopName: {
             fontSize: '0.9rem',
